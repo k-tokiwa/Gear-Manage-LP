@@ -28,14 +28,14 @@
     /*テンプレートの土台となる色（主に背景カラー）*/
     --base-inverse-color: #323232;
     /*上のbase-colorの対となる色（主にテキストカラー）*/
-    --primary-color: #d1e6ff;
+    --primary-color: #00bcd4;
     /*テンプレートのメインまたはアクセントカラー*/
     --primary-inverse-color: #323232;
     /*上のprimary-colorの対となる色*/
     --space-large: 8vw;
     --space-plan: 12px;
     /*主に余白の一括管理用。画面幅100%＝100vwです。*/
-    --bg-inverse-color: #a7a7a7;
+    --bg-inverse-color: #1f7a85;
 }
 
 
@@ -1693,7 +1693,7 @@ footer small {
 /*bg-black内のp要素への追加設定*/
 
 .list-grid1 .list.bg-black p {
-    color: #999;
+    color: #fff;
     /*文字色*/
 }
 
