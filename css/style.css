@@ -692,7 +692,7 @@ a.ddmenu::before {
 /*ブロック全体*/
 
 #mainimg {
-    background: var(--base-color) url("../images/mainimg_sh.jpg") no-repeat center center / cover;
+    background: var(--base-color) url("../images/mainimg_sh.svg") no-repeat center center / cover;
     width: 100%;
     padding-top: 150%;
     /*アスペクト比2:3（3÷2=1.5）*/
@@ -2021,10 +2021,13 @@ section>.bg-slideup:first-child {
 /*画像ブロック*/
 
 .list-normal1 figure {
-    width: 30%;
-    /*幅*/
     margin-bottom: 1rem;
-    /*下に空けるスペース*/
+    text-align: center;
+}
+
+/* 主な機能のfigureのみ50%に設定 */
+#features .list-normal1 figure {
+    width: 50%;
 }
 
 
@@ -2640,6 +2643,11 @@ section#plan {
     }
     #mainimg .btn {
         font-size: 16px;
+    }
+
+    /* 主な機能のfigureのみ50%に設定 */
+    #features .list-normal1 figure {
+        width: 100%;
     }
 }
 
