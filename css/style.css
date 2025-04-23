@@ -340,28 +340,38 @@ header.scrolled {
 
 
 /*ロゴ画像*/
+#logo {
+    position: relative;
+    display: flex;
+    align-items: center; /* 子要素を縦方向に中央揃え */
+    padding-left: 3vw; /* 既存の余白を維持 */
+}
 
 #logo img {
     display: block;
-    width: 150px;
-    /*ロゴの幅*/
+    width: 150px; /* ロゴの幅 */
+    height: auto; /* 高さを自動調整 */
+    /* vertical-alignは削除 */
 }
 
-#logo {
-    margin: 0;
-    padding: 0;
-    padding-left: 3vw;
-    /*ロゴの左側に空ける余白*/
+#logo::before {
+    content: "";
+    display: block;
+    width: 24px; /* SVGの幅 */
+    height: 24px; /* SVGの高さ */
+    background-image: url('../images/logo.svg'); /* SVGのパス */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px; /* 画像との間隔 */
+    flex-shrink: 0; /* サイズが縮まないようにする */
+    /* vertical-alignは削除 */
 }
 
-
-/*画面幅700px以上の追加指定*/
-
-@media screen and (min-width:700px) {
-    /*ロゴ画像*/
-    #logo img {
-        width: 200px;
-        /*ロゴの幅*/
+/* 画面幅700px以上の追加指定 */
+@media screen and (min-width: 700px) {
+    #logo::before {
+        width: 40px; /* SVGの幅を調整 */
+        height: 40px; /* SVGの高さを調整 */
     }
 }
 
