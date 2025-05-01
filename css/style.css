@@ -2760,3 +2760,148 @@ section#plan {
     left: 0;
     color: #1976d2;
 }
+
+/* 機能画面のサムネイル表示用スタイル */
+.MainFeaturesImg {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.MainFeaturesImg figure {
+    margin: 0;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.MainFeaturesImg figure:hover {
+    transform: translateY(-5px);
+}
+
+.MainFeaturesImg img {
+    display: block;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* タブレット向け表示改善 */
+@media screen and (min-width: 700px) and (max-width: 899px) {
+    .list-normal1 .list {
+        display: block; /* フレックスレイアウトを解除 */
+    }
+    
+    .list-normal1 .text {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .MainFeaturesImg {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .MainFeaturesImg figure {
+        width: 45%;
+        min-width: 200px;
+    }
+}
+
+/* ミディアムサイズスクリーン */
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+    .list-normal1 .list {
+        align-items: center;
+    }
+    
+    .list-normal1 .text {
+        width: 48%;
+    }
+    
+    .MainFeaturesImg {
+        width: 48%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
+    }
+    
+    .MainFeaturesImg figure {
+        width: 45%;
+        min-width: 180px;
+    }
+    
+    /* reverseクラスの場合、画像を左側に配置 */
+    .list.reverse .text {
+        order: 2;
+    }
+    
+    .list.reverse .MainFeaturesImg {
+        order: 1;
+    }
+}
+
+/* PCサイズでの調整 */
+@media screen and (min-width: 1200px) {
+    .list-normal1 .list {
+        align-items: center;
+    }
+    
+    .list-normal1 .text {
+        width: 50%;
+    }
+    
+    .MainFeaturesImg {
+        width: 50%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
+    }
+    
+    .MainFeaturesImg figure {
+        width: 45%;
+        min-width: 250px;
+    }
+    
+    /* reverseクラスの場合、画像を左側に配置 */
+    .list.reverse .text {
+        order: 2;
+    }
+    
+    .list.reverse .MainFeaturesImg {
+        order: 1;
+    }
+}
+
+/* キャッチフレーズのスタイル */
+.catch-phrase {
+    display: inline-block;
+    color: #1976d2; /* メインカラーに合わせた青色 */
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    border-left: 3px solid #1976d2; /* 左に縦線 */
+    line-height: 1.4;
+}
+
+/* スマホ表示時にキャッチフレーズをさらに目立たせる */
+@media screen and (max-width: 768px) {
+    .catch-phrase {
+        font-size: 1em;
+        background-color: rgba(25, 118, 210, 0.05); /* 背景に薄く色をつける */
+        padding: 0.3em 0.5em;
+        margin-left: -0.5em;
+        margin-right: -0.5em;
+        width: calc(100% + 1em);
+        border-left: 4px solid #1976d2;
+    }
+}
