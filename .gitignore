@@ -1,1 +1,18 @@
+# .gitignore
+
+# 開発環境
 .cursor/
+.DS_Store
+.vscode/
+node_modules/
+
+# 未使用の素材ファイル
+images/1413.png
+images/logo2.png
+images/mainimg_pc_sozai.png
+images/mainimg_sh_sozai.png
+images/mainimg_sozai.png
+
+# 編集元ファイル
+*.psd
+*.ai
