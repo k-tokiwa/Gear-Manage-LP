@@ -2760,3 +2760,109 @@ section#plan {
     left: 0;
     color: #1976d2;
 }
+
+/* 機能画面のサムネイル表示用スタイル */
+.MainFeaturesImg {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%; /* 基本的な幅を100%に設定 */
+}
+
+.MainFeaturesImg figure {
+    margin: 0;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100% !important; /* !importantを追加して他のすべての設定を上書き */
+}
+
+.MainFeaturesImg figure:hover {
+    transform: translateY(-5px);
+}
+
+.MainFeaturesImg img {
+    display: block;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+/* スマホ向け表示 (デフォルト) */
+.list-normal1 .list {
+    display: block; /* フレックスレイアウトを使用しない */
+}
+
+.list-normal1 .text {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* 600〜700pxの範囲にも明示的に1列設定を追加 */
+@media screen and (min-width: 600px) and (max-width: 699px) {
+    .MainFeaturesImg {
+        flex-direction: column; /* 縦方向に並べる */
+    }
+    
+    .MainFeaturesImg figure {
+        width: 100%; /* 画像を1列表示 */
+    }
+}
+
+/* タブレット以上の画面サイズ */
+@media screen and (min-width: 700px) {
+    .list-normal1 .list {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    .list-normal1 .text {
+        width: 50%;
+        flex: 1;
+        margin-bottom: 0;
+    }
+    
+    .MainFeaturesImg {
+        width: 50%;
+        flex: 1;
+        /* flex-directionはcolumnのまま変更しない */
+        margin-top: 0;
+    }
+    
+    /* reverseクラスの場合、画像を左側に配置 */
+    .list.reverse .text {
+        order: 2;
+    }
+    
+    .list.reverse .MainFeaturesImg {
+        order: 1;
+    }
+}
+
+/* キャッチフレーズのスタイル */
+.catch-phrase {
+    display: inline-block;
+    color: #1976d2; /* メインカラーに合わせた青色 */
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    border-left: 3px solid #1976d2; /* 左に縦線 */
+    line-height: 1.4;
+}
+
+/* スマホ表示時にキャッチフレーズをさらに目立たせる */
+@media screen and (max-width: 768px) {
+    .catch-phrase {
+        font-size: 1em;
+        background-color: rgba(25, 118, 210, 0.05); /* 背景に薄く色をつける */
+        padding: 0.3em 0.5em;
+        margin-left: -0.5em;
+        margin-right: -0.5em;
+        width: calc(100% + 1em);
+        border-left: 4px solid #1976d2;
+    }
+}
