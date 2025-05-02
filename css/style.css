@@ -2768,6 +2768,7 @@ section#plan {
     gap: 1.5rem;
     align-items: center;
     margin-top: 2rem;
+    width: 100%; /* 基本的な幅を100%に設定 */
 }
 
 .MainFeaturesImg figure {
@@ -2776,7 +2777,7 @@ section#plan {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: hidden;
-    width: 100%;
+    width: 100% !important; /* !importantを追加して他のすべての設定を上書き */
 }
 
 .MainFeaturesImg figure:hover {
@@ -2787,89 +2788,49 @@ section#plan {
     display: block;
     border-radius: 8px;
     width: 100%;
-    max-width: 100%;
     height: auto;
 }
 
-/* タブレット向け表示改善 */
-@media screen and (min-width: 700px) and (max-width: 899px) {
-    .list-normal1 .list {
-        display: block; /* フレックスレイアウトを解除 */
-    }
-    
-    .list-normal1 .text {
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-    
+/* スマホ向け表示 (デフォルト) */
+.list-normal1 .list {
+    display: block; /* フレックスレイアウトを使用しない */
+}
+
+.list-normal1 .text {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* 600〜700pxの範囲にも明示的に1列設定を追加 */
+@media screen and (min-width: 600px) and (max-width: 699px) {
     .MainFeaturesImg {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        flex-direction: column; /* 縦方向に並べる */
     }
     
     .MainFeaturesImg figure {
-        width: 45%;
-        min-width: 200px;
+        width: 100%; /* 画像を1列表示 */
     }
 }
 
-/* ミディアムサイズスクリーン */
-@media screen and (min-width: 900px) and (max-width: 1199px) {
+/* タブレット以上の画面サイズ */
+@media screen and (min-width: 700px) {
     .list-normal1 .list {
-        align-items: center;
-    }
-    
-    .list-normal1 .text {
-        width: 48%;
-    }
-    
-    .MainFeaturesImg {
-        width: 48%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 0;
-    }
-    
-    .MainFeaturesImg figure {
-        width: 45%;
-        min-width: 180px;
-    }
-    
-    /* reverseクラスの場合、画像を左側に配置 */
-    .list.reverse .text {
-        order: 2;
-    }
-    
-    .list.reverse .MainFeaturesImg {
-        order: 1;
-    }
-}
-
-/* PCサイズでの調整 */
-@media screen and (min-width: 1200px) {
-    .list-normal1 .list {
-        align-items: center;
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
     }
     
     .list-normal1 .text {
         width: 50%;
+        flex: 1;
+        margin-bottom: 0;
     }
     
     .MainFeaturesImg {
         width: 50%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex: 1;
+        /* flex-directionはcolumnのまま変更しない */
         margin-top: 0;
-    }
-    
-    .MainFeaturesImg figure {
-        width: 45%;
-        min-width: 250px;
     }
     
     /* reverseクラスの場合、画像を左側に配置 */
